@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor=" let concert of concertList">
+
+      <ion-label>
+        {{ concert.bandName }}
+        <p>
+          {{ concert.location.name }} at
+          {{ concert.location.city }}
+        </p>
+      </ion-label>
+      <ion-chip slot="end">
+        {{ concert.concertDate | date: format: 'd/m/y' }}
+      </ion-chip>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
